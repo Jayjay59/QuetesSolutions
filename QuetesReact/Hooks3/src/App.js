@@ -12,12 +12,12 @@ function App() {
 
   const handleLogout = () => {
     setUser("");
+    console.log("Bye");
+    console.log("L'utilisateur a changé !");
   };
 
   useEffect(() => {
-    if (user === "") {
-      console.log("Bye!");
-    } else {
+    if (user !== "") {
       console.log("L'utilisateur a changé !");
     }
   }, [user]);
