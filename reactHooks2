@@ -1,0 +1,51 @@
+import React, { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+
+  const handleChangeName = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    console.log(" Name : " + name);
+    console.log(" Email : " + email);
+    event.preventDefault();
+  };
+
+  return (
+    <div className="App">
+      <form onSubmit={handleSubmit}>
+        <label>Name</label>
+        <br />
+        <input
+          type="text"
+          name="name"
+          placeholder="Mary"
+          value={name}
+          onChange={handleChangeName}
+        />
+        <br />
+        <label>Email</label>
+        <br />
+        <input
+          type="text"
+          placeholder="mary.poppins@disney.fr"
+          onChange={handleChangeEmail}
+          name="email"
+          value={email}
+        />
+        <br />
+        <button onSubmit={handleSubmit}>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
