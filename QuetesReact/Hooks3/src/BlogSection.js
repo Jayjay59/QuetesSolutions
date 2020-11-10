@@ -23,3 +23,4 @@ const BlogSection = ({ user, onLogout }) => {
 };
 
 export default BlogSection;
+
